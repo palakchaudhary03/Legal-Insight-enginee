@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+node_modules/
+.vscode/
+data/raw/
+data/test_cases/
+data/processed/*.csv
+data/processed/*.npy
+models/
+*.log
+.DS_Store

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Insight Engine</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <header>
+    <div>
+      <b>Legal Insight Engine</b>
+      <small>Smart legal reading &amp; precedent research assistant</small>
+    </div>
+    <span id="status">Checking backend…</span>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <label>Legal Research Assistant</label>
+        <h1>Understand a new case faster.</h1>
+        <p>Upload a judgment to get an extractive summary, key terms and semantically similar historical cases.</p>
+        <em>Research support only. The system does not make or replace a legal decision.</em>
+      </div>
+
+      <div class="upload">
+        <label class="drop" id="drop" for="file">
+          <strong>Upload judgment PDF</strong>
+          <span id="name">Click or drag a PDF here</span>
+          <small>Maximum 10 MB</small>
+        </label>
+
+        <input id="file" type="file" accept="application/pdf,.pdf">
+
+        <button id="go" disabled>Analyze Case</button>
+
+        <div id="error"></div>
+      </div>
+    </section>
+
+    <div class="head">
+      <h2>Reference collection</h2>
+    </div>
+
+    <div class="stats">
+      <div>
+        <small>Indexed cases</small>
+        <b id="casesN">0</b>
+      </div>
+      <div>
+        <small>Years covered</small>
+        <b id="yearsN">—</b>
+      </div>
+      <div>
+        <small>Reference period</small>
+        <b id="period">1950–2024</b>
+      </div>
+    </div>
+
+    <div class="pipeline">
+      <h2>Pipeline</h2>
+      <div>
+        <span>PDF</span> →
+        <span>Text extraction</span> →
+        <span>Cleaning + privacy</span> →
+        <span>Embedding</span> →
+        <span>Similarity search</span> →
+        <span>Results</span>
+      </div>
+    </div>
+
+    <div id="loading" class="hidden">
+      <p class="muted">Analyzing case…</p>
+    </div>
+
+    <section id="results" class="hidden">
+      <div class="two">
+        <div class="card">
+          <div class="head">
+            <h2>Case Overview</h2>
+            <span class="muted" id="words"></span>
+          </div>
+          <p id="summary"></p>
+          <div id="terms"></div>
+          <div class="head" style="margin-top:16px">
+            <button id="copyBtn" type="button">Copy Summary</button>
+            <button id="printBtn" type="button">Save as PDF</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="head">
+            <h2>Similar Historical Cases</h2>
+            <select id="yearFilter">
+              <option value="">All years</option>
+            </select>
+          </div>
+          <div id="cases"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Deep Learning · Data Engineering · Security &amp; Privacy · Data Visualization
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
