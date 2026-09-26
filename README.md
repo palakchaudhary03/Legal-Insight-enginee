@@ -42,3 +42,7 @@ A sentence transformer maps text into a vector. For example, two legally related
 
 ## Limitations
 This is an educational research assistant, not a legal decision system. Similarity is not legal equivalence and is not a recommendation. The summary is extractive, not a generated legal opinion. The PII layer is basic pattern masking, not complete anonymization. Scanned image-only PDFs may need OCR, which is not included in this version.
+
+## Dataset
+Uses the Supreme Court Judgments dataset (1950–2024) from Kaggle:
+https://www.kaggle.com/datasets/adarshsingh0903/legal-dataset-sc-judgments-india-19502024asrt
